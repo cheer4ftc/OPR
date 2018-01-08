@@ -43,10 +43,6 @@ public class Main {
         FtcScoringFileReader.FtcEventResult event = FtcScoringFileReader.readMatchDetails(inputFilename, true);
 
         team = OPR.getTeamList(teamsPerAlliance, event.teamPlaying);
-     /* for (int t = 0; t < team.length; t++) {
-            System.out.printf("%6d", team[t]);
-            System.out.println();
-        }*/
 
         opr = OPR.computeMMSE(mmse, team, teamsPerAlliance, event.teamPlaying, event.score[FtcScoringFileReader.SCORE_TYPE.TOTAL.ordinal()]);
         if (opr == null) {
